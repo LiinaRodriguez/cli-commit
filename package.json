@@ -1,0 +1,52 @@
+{
+  "name": "smart-commit",
+  "version": "0.1.0",
+  "description": "AI git commit assistant: reviews your diff with Claude and writes Conventional Commit messages.",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiinaRodriguez/cli-commit.git"
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "conventional-commits",
+    "claude",
+    "cli"
+  ],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/LiinaRodriguez/cli-commit/issues"
+  },
+  "homepage": "https://github.com/LiinaRodriguez/cli-commit#readme",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.135.0",
+    "@inquirer/core": "^12.0.5",
+    "@inquirer/prompts": "^8.7.4",
+    "chalk": "^6.0.1",
+    "commander": "^15.0.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsup": "^9.0.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "type": "module",
+  "bin": {
+    "smart-commit": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}
